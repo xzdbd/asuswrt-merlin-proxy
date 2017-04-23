@@ -1,4 +1,4 @@
-#!/opt/bin/bash
+#!/bin/sh
 
 iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/7 -j RETURN
 iptables -t nat -A SHADOWSOCKS -d 10.0.0.0/8 -j RETURN
