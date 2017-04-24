@@ -18,8 +18,8 @@ replace_string ss-local ss-redir /opt/etc/init.d/S22shadowsocks
 wget -O ./kcptun-linux-arm https://github.com/xtaci/kcptun/releases/download/v20170329/kcptun-linux-arm-20170329.tar.gz
 tar xvzf ./kcptun-linux-arm
 cp ./client_linux_arm5 /opt/bin/
-cp ./config/kcptun/kcptun /opt/etc/init.d/kcptun
-chmod a+rx /opt/etc/init.d/kcptun
+cp ./config/kcptun/S22kcptun /opt/etc/init.d/S22kcptun
+chmod a+rx /opt/etc/init.d/S22kcptun
 
 
 # Configure dnsmasq
