@@ -5,8 +5,9 @@ source ./script/functions.sh
 # entware-setup.sh; opkg update && opkg upgrade
 
 # Configure shadowsocks
+set -e
 opkg install shadowsocks-libev
-
+set +e
 if [ ! -e ./config/shadowsocks/shadowsocks.json ];then
 	cp ./config/shadowsocks/shadowsocks.json /opt/etc/shadowsocks.json
 fi
@@ -37,11 +38,9 @@ ss_local_port=$(cat /opt/etc/shadowsocks.json |grep 'local_port"' |grep -o '[0-9
 replace_string 'SS_SERVER_IP' $ss_server_ip /script/iptables.sh
 replace_string 'SS_LOCAL_PORT' $ss_local_port /script/iptables.sh
 
-cp /script/iptables.sh /jffs/scripts/
-cp /scripts/iptables-ch.sh /jffs/scripts/
-echo -e "#!/bin/sh\n\n/jffs/scripts/iptalbes.sh" > /jffs/scripts/wan-start
+cp ./script/iptables.sh /jffs/scripts/
+cp ./script/iptables-ch.sh /jffs/scripts/
+echo -e "#!/bin/sh\n\n/jffs/scripts/iptables.sh" > /jffs/scripts/wan-start
 chmod a+rx /jffs/scripts/*
 
 echo 'Deploy success! Rebooting, please wait ...'
-
-
