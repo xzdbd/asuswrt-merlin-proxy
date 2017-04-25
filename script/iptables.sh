@@ -16,7 +16,7 @@ if iptables -t nat -N SHADOWSOCKS; then
 
 	iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports SS-LOCAL-PORT
 
-	iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS
+	iptables -t nat -A PREROUTING -p tcp -m multiport --dports 80,443 -j SHADOWSOCKS
 
 	iptables -t nat -A OUTPUT -p tcp -j SHADOWSOCKS
 fi
