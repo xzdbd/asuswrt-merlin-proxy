@@ -6,7 +6,7 @@
 
 2. Shadowsocks 服务端，需启用 UDP Relay。使用 Docker 部署，可以看[docker-compose.yml](https://github.com/xzdbd/dockerfiles/blob/master/shadowsocks-go/docker-compose.yml)。
 
-##　实现思路
+## 实现思路
 
 1. 海外流量走 Shadowsocks，国内流量直连。
 
