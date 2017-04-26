@@ -45,15 +45,15 @@ Merlin固件拥有更多的功能，由于第三方不断维护代码，各种�
 # mkfs.ext3 /dev/sda1
 ```
 
-### 安装Entware-ng
+### 安装 Entware-ng
 
-ssh登陆到路由器。
+ssh 登陆到路由器。
 
 ```
 ssh admin@192.168.1.1
 ```
 
-安装Entware-ng，具体的安装说明看Entware-ng的[Wiki](https://github.com/Entware-ng/Entware-ng/wiki/Install-on-asuswrt-merlin-firmware)。
+安装 Entware-ng ，具体的安装说明看 Entware-ng 的[Wiki](https://github.com/Entware-ng/Entware-ng/wiki/Install-on-asuswrt-merlin-firmware)。
 
 ```
 entware-setup.sh
@@ -133,7 +133,7 @@ PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/u
 
 ss-tunnel 建立了一个通道，发到这个 7913 端口的请求都会被转到 VPS，VPS 再去请求 Google DNS (8.8.8.8) 做 DNS 解析。
 
-启动S22shadowsocks：``/opt/etc/init.d/S22ss-tunnel start``。
+启动 S22shadowsocks：``/opt/etc/init.d/S22ss-tunnel start``。
 
 ### 配置 iptables 做自动流量转发
 
