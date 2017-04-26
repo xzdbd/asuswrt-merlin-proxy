@@ -147,6 +147,8 @@ ss-tunnel 建立了一个通道，发到这个 7913 端口的请求都会被转�
 
 * 其他流量都转到 VPS 上
 
+新建一个 iptables.sh 脚本
+
 ```
 #!/bin/sh
 
@@ -221,7 +223,7 @@ cru a iptables-nat "*/1 * * * *" "/jffs/scripts/iptables.sh"
 cru a run-services "*/1 * * * *" "/jffs/scripts/services-start"
 ```
 
-### 以上各项完成后，重启路由器，访问网站，查看路由器已经正常运行。如果出现域名系统(DNS) 错误，尝试清楚浏览器 DNS 缓存以及电脑/手机 DNS 缓存。
+以上各项完成后，重启路由器，访问网站，查看路由器已经正常运行。如果出现域名系统(DNS) 错误，尝试清楚浏览器 DNS 缓存以及电脑/手机 DNS 缓存。
 
 
 ### 开启 [kcptun](https://github.com/xtaci/kcptun) 加速 （可选）
