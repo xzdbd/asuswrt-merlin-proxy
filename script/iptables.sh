@@ -12,7 +12,7 @@ if $iptables -t nat -N SHADOWSOCKS; then
 	iptables -t nat -A SHADOWSOCKS -d 224.0.0.0/4 -j RETURN
 	iptables -t nat -A SHADOWSOCKS -d 240.0.0.0/4 -j RETURN
 
-	./iptables-ch.sh
+	/jffs/scripts/iptables-ch.sh
 
 	iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports SS-LOCAL-PORT
 

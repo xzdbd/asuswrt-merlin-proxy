@@ -1,9 +1,9 @@
 {
-    "server":"127.0.0.1",
-    "server_port":8389,
-    "local_address":"192.168.1.1",
-    "local_port":1080,
-    "password":"password",
-    "timeout":60,
-    "method":"aes-128-cfb"
+	"server": "SS-SERVER-IP",
+	"server_port": 8389,
+	"local_address": "192.168.1.1",
+	"local_port": 1080,
+	"password": "password",
+	"timeout": 60,
+	"method": "aes-128-cfb"
 }
