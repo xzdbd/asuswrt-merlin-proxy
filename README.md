@@ -14,7 +14,7 @@
 
 3. 两端开启 [kcptun](https://github.com/xtaci/kcptun) 加速。（可选）
 
-##　具体步骤
+## 具体步骤
 
 ### 给路由器刷 merlin 固件。
 
@@ -91,13 +91,13 @@ opkg install shadowsocks-libev
 
 其中 local_address 参数：
 
-	* 要想使局域网内机器能够访问到部署在路由器上的 shadowsocks 服务，需要将该地址指定为路由器的IP地址（如 192.168.1.1，具体值取决于所配置的路由器的IP地址）；
+* 要想使局域网内机器能够访问到部署在路由器上的 shadowsocks 服务，需要将该地址指定为路由器的IP地址（如 192.168.1.1，具体值取决于所配置的路由器的IP地址）；
 	
-	* 要想使路由器自身的流量能够经过 shadowsocks 服务，需要将该地址指定为 127.0.0.1；
+* 要想使路由器自身的流量能够经过 shadowsocks 服务，需要将该地址指定为 127.0.0.1；
 
-	* 若想使路由器自身和局域网内的机器都能够使用到 shadowsocks 服务，则需将该地址指定为 0.0.0.0。
+* 若想使路由器自身和局域网内的机器都能够使用到 shadowsocks 服务，则需将该地址指定为 0.0.0.0。
 
-编辑 S22shadowsocks 服务文件 ``/opt/etc/init.d/S22shadowsocks``，将其中PROCS=ss-local改为PROCS=ss-redir。
+编辑 S22shadowsocks 服务文件 ``/opt/etc/init.d/S22shadowsocks``，将其中 PROCS=ss-local 改为 PROCS=ss-redir 。
 
 ```
 #!/bin/sh
@@ -139,13 +139,13 @@ ss-tunnel 建立了一个通道，发到这个 7913 端口的请求都会被转�
 
 具体思路：
 
-	** 到内网的流量（如 127.0.0.1, 192.168.1.*) 直连
+* 到内网的流量（如 127.0.0.1, 192.168.1.*) 直连
 
-	** 到国内 ISP 的流量直连
+* 到国内 ISP 的流量直连
 
-	** 到 VPS 的流量直连
+* 到 VPS 的流量直连
 
-	** 其他流量都转到 VPS 上
+* 其他流量都转到 VPS 上
 
 ```
 #!/bin/sh
@@ -174,16 +174,16 @@ fi
 
 其中：
 	
-	** ``SS-SERVER-IP`` 改为 Shadowsocks 服务端所在机器的IP
+* ``SS-SERVER-IP`` 改为 Shadowsocks 服务端所在机器的IP
 
-	** ``SS-LOCAL-PORT`` 改为 本地监听 Shadowsocks 的端口，本例中为 1080
+* ``SS-LOCAL-PORT`` 改为 本地监听 Shadowsocks 的端口，本例中为 1080
 
-	** ``/jffs/scripts/iptables-ch.sh`` 脚本为使用 bestroutetb 生成国内 IP 段的 iptables
+* ``/jffs/scripts/iptables-ch.sh`` 脚本为使用 bestroutetb 生成国内 IP 段的 iptables
 
-		```
-		$ bestroutetb -p custom --rule-format="iptables -t nat -A SHADOWSOCKS -d %prefix/%mask -j %gw"$'\n'  --gateway.net="RETURN" -o ./iptables
-		$ grep RETURN ./iptables > ./iptables-ch.sh
-		```
+```
+$ bestroutetb -p custom --rule-format="iptables -t nat -A SHADOWSOCKS -d %prefix/%mask -j %gw"$'\n'  --gateway.net="RETURN" -o ./iptables
+$ grep RETURN ./iptables > ./iptables-ch.sh
+```
 
 将 iptables.sh 以及 iptables-ch.sh 脚本拷贝到路由器 ``/jffs/scripts/`` 路径下，并修改或修改 /jffs/scripts/nat-start 脚本。该脚本用来设置nat表有关规则。有关 nat-start 脚本，参考 [asuswrt-merlin wiki](https://github.com/RMerl/asuswrt-merlin/wiki/User-scripts)。
 
@@ -287,7 +287,7 @@ PATH=/opt/sbin:/opt/bin:/opt/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/u
 /opt/etc/init.d/S22kcptun start
 ```
 
-**3. 修改 /opt/etc/shadowsocks.json 文件，
+**3. 修改 /opt/etc/shadowsocks.json 文件**
 
 ```
 {
