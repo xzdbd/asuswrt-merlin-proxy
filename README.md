@@ -1,5 +1,7 @@
 # ASUS Merlin 路由器科学上网
 
+更新时间：2017年4月26日 :cat:
+
 ## 准备工作
 
 1. 一台刷上 ASUS Merlin 的华硕路由器，我使用的是 ASUS RT-AC68U。
@@ -53,7 +55,7 @@ ssh 登陆到路由器。
 ssh admin@192.168.1.1
 ```
 
-安装 Entware-ng ，具体的安装说明看 Entware-ng 的[Wiki](https://github.com/Entware-ng/Entware-ng/wiki/Install-on-asuswrt-merlin-firmware)。
+安装 Entware-ng ，具体的安装说明看 Entware-ng 的 [Wiki](https://github.com/Entware-ng/Entware-ng/wiki/Install-on-asuswrt-merlin-firmware)。
 
 ```
 entware-setup.sh
