@@ -152,7 +152,7 @@ ss-tunnel 建立了一个通道，发到这个 7913 端口的请求都会被转�
 ```
 #!/bin/sh
 
-if $iptables -t nat -N SHADOWSOCKS; then
+if iptables -t nat -N SHADOWSOCKS; then
 	iptables -t nat -A SHADOWSOCKS -d SS-SERVER-IP -j RETURN
 
 	iptables -t nat -A SHADOWSOCKS -d 0.0.0.0/8 -j RETURN
