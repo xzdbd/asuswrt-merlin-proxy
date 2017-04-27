@@ -204,7 +204,7 @@ $ grep RETURN ./iptables > ./iptables-ch.sh
 
 ```
 mkdir /jffs/dnsmasq-conf
-wget -O /jffs/dnsmasq-conf/ https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
+wget -O /jffs/dnsmasq-conf/accelerated-domains.china.conf https://raw.githubusercontent.com/felixonmars/dnsmasq-china-list/master/accelerated-domains.china.conf
 
 # 此处7931端口要与之前配置的ss-tunnel监听端口一致
 echo server=/#/127.0.0.1#7913 > /jffs/dnsmasq-conf/foreign-domains.conf
@@ -213,7 +213,7 @@ echo conf-dir=/jffs/dnsmasq-conf > /jffs/configs/dnsmasq.conf.add
 ```
 
 
-### 配置调度任务
+### 配置调度任务 （可选）
 
 在脚本 ``/jffs/scripts/service-start`` 中加入以下脚本以检查各项服务是否正在行，以及iptables设置是否正常被应用。[Wiki](https://github.com/RMerl/asuswrt-merlin/wiki/Scheduled-tasks-(cron-jobs))
 
